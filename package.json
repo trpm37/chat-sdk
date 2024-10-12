@@ -5,16 +5,26 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.7",
+    "mitt": "^3.0.1",
+    "pinia": "^2.2.0",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "recordrtc": "^5.6.2",
+    "three": "^0.164.0",
+    "three-mesh-bvh": "^0.8.2",
+    "vconsole": "^3.15.1",
     "vue": "^3.5.10"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
+    "@types/three": "^0.169.0",
     "typescript": "^5.5.3",
     "vite": "^5.4.8",
-    "vue-tsc": "^2.1.6"
+    "vue-tsc": "^2.1.6",
+    "prettier": "^3.3.3"
   }
 }
