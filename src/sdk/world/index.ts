@@ -13,8 +13,8 @@ import Character from "../character";
 import Audio from "../audio";
 import * as Constants from "../Constants";
 import Stats from "three/examples/jsm/libs/stats.module.js";
-import { useChatStore } from "@/stores/modules/chat";
-const chatStore = useChatStore(); //数据
+// import { useChatStore } from "@/stores/modules/chat";
+// const chatStore = useChatStore(); //数据
 
 export default class World {
   scene: THREE.Scene;
@@ -34,7 +34,10 @@ export default class World {
   log: boolean = false;
   webgl: any;
 
-  constructor() {
+  chatStore:any;
+
+  constructor(params:any) {
+    this.chatStore = params.data || {};
     this.emitter = new Emitter();
   }
 
@@ -72,7 +75,7 @@ export default class World {
       camera: this.camera,
       loader: this.loader,
       emitter: this.emitter,
-      data: chatStore.info.robot.human_config
+      data: this.chatStore.robot.human_config
     });
 
     this.audio = new Audio({
@@ -89,7 +92,7 @@ export default class World {
       control: this.control,
       loader: this.loader,
       emitter: this.emitter,
-      data: chatStore.info.robot.human_config,
+      data: this.chatStore.robot.human_config,
       audio: this.audio,
       env: this.environment
     });
